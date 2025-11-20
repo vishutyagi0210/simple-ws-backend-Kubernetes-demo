@@ -25,6 +25,8 @@ wss.on("connection" , (socket)=>{
             User[object.payload.roomId]?.forEach((s)=>{
                 if(s != socket)
                     s.send(object.payload.message);
+                else
+                    s.send("message sent!!!!");
             })
         }
 
